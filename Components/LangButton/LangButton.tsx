@@ -1,27 +1,33 @@
 import { useContext, useState, useEffect } from "react";
 import { languageContext } from "../../Context/languageContext";
-import { Wrapper, Es, En } from "./LangButton.styles";
+import { Wrapper } from "./LangButton.styles";
+import Switch from "https://framer.com/m/Switch-7r3D.js@b4FAy5D6H33TTByeRzu6";
 
 export const LangButton: React.FC = () => {
   const { language, setLanguage } = useContext(languageContext);
-  const [position, setPosition] = useState("");
+  const [isToggled, setIsToggled] = useState<boolean>();
 
-  const switchLanguage = (lan: string) => {
-    localStorage.setItem("language", lan);
-    setLanguage(lan);
+  const switchLanguage = () => {
+    if (language === "es") {
+      localStorage.setItem("language", "en");
+      setLanguage("en");
+    } else {
+      localStorage.setItem("language", "es");
+      setLanguage("es");
+    }
   };
 
   useEffect(() => {
-    language === "es" ? setPosition("0px") : setPosition("30px");
+    language === "es" ? setIsToggled(false) : setIsToggled(true);
   }, [language]);
 
   return (
     <div>
-      <Wrapper pos={position}>
-        <div></div>
-        <Es onClick={() => switchLanguage("es")}>es</Es>
-        <En onClick={() => switchLanguage("en")}>en</En>
+      <Wrapper onClick={switchLanguage}>
+        <Switch toggled={isToggled} />
       </Wrapper>
+      {/*   <En onClick={() => switchLanguage("en")}>en</En>
+      <Es onClick={() => switchLanguage("es")}>es</Es> */}
     </div>
   );
 };
