@@ -13,6 +13,7 @@ export const ButtonStyles = styled(motion.button)`
   letter-spacing: 1px;
   border: none;
   font-family: monospace;
+  cursor: pointer;
 `;
 
 export const Button: React.FC<{ text: string; color: string }> = ({

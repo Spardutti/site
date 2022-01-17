@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Projects } from "./AllProjects.styled";
 import { projects } from "../../Assets/projects";
-import { Button } from "../Projects/Projects.styled";
+import { Button } from "../Components/Button";
 
 type Props = {
   language: string;
@@ -34,9 +34,9 @@ export const AllProjects: React.FC<Props> = ({ language }) => {
           {projects.slice(2).map((project, index) => {
             return (
               <div key={index}>
-                <Button target="_blank" href={project.github} color="#85144b">
-                  {project.name}
-                </Button>
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <Button text={project.name} color="#85144b" />
+                </a>
               </div>
             );
           })}
