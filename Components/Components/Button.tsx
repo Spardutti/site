@@ -9,8 +9,10 @@ export const ButtonStyles = styled(motion.button)`
   border-radius: 10px;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: bold;
   color: white;
+  letter-spacing: 1px;
+  border: none;
+  font-family: monospace;
 `;
 
 export const Button: React.FC<{ text: string; color: string }> = ({

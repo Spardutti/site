@@ -18,4 +18,8 @@ export const Container = styled(motion.div)`
     margin: 0 5px;
     cursor: pointer;
   }
+
+  @media (max-width: 450px) {
+    font-size: 10px;
+  }
 `;

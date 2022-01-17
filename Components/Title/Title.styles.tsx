@@ -75,9 +75,11 @@ export const TitleContainer: React.FC<{ text: string }> = ({ text }) => {
   return (
     <AnimatePresence>
       <Title
-        animate={{ x: [-1000, 100, 0] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           delay: 0.5,
+          duration: 2,
         }}
       >
         <h1>{text}</h1>

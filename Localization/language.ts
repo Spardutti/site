@@ -29,5 +29,5 @@ export const es: Info = {
     en convertirme en una mejor versión de mí mismo cada día.`,
   contact: "Contactame",
   quote:
-    "Lo que hago no es para mí. Es para personas como tu, que desean ver las cosas echas",
+    "Interesado en las nuevas tecnologías y siempre listo para un desafío.",
 };
