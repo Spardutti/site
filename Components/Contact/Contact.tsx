@@ -1,4 +1,5 @@
 import { Container } from "./Contact.styled";
+import Image from "next/image";
 
 type Info = {
   url: string;
@@ -23,7 +24,11 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
         <h2>Contactame</h2>
         <div>
           {contactInfo.map((elem, index) => {
-            return <i key={index} className={elem.icon}></i>;
+            return (
+              <a href={elem.url} key={index} target={"_blank"} rel="noreferrer">
+                <i className={elem.icon}></i>
+              </a>
+            );
           })}
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"

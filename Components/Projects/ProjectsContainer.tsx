@@ -4,6 +4,7 @@ import { Container, LatestProjects } from "./ProjectsContainer.styled";
 import { NavBar } from "../Navbar/Navbar";
 import { WorkingOn } from "../WorkingOn/WorkingOn";
 import { AllProjects } from "./AllProjects";
+import { AnimatePresence } from "framer-motion";
 
 type Props = {
   language: string;
@@ -13,7 +14,9 @@ type Props = {
 export const ProjectsContainer: React.FC<Props> = ({ language, yPos }) => {
   return (
     <Container id="projects">
-      {yPos >= 450 ? <NavBar language={language} /> : null}
+      <AnimatePresence>
+        {yPos >= 450 ? <NavBar language={language} /> : null}
+      </AnimatePresence>
       <h2>{language === "es" ? "Proyectos" : "Projects"}</h2>
 
       <LatestProjects>

@@ -21,7 +21,13 @@ export const LangButton: React.FC = () => {
   }, [language]);
 
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{
+        opacity: 0,
+      }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 1.5 }}
+    >
       <p>Es</p>
       <SelectorContainer onClick={switchLanguage}>
         <Selector position={isToggled} />

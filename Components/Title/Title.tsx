@@ -15,7 +15,7 @@ export const Title: React.FC<Props> = ({ language }) => {
       <NavContainer>
         <div>
           <motion.div
-            initial={{ y: "-100vh" }}
+            initial={{ y: -1000 }}
             animate={{ y: 0 }}
             transition={{ delay: 0.5, duration: 2 }}
             whileTap={{ scale: 1.2 }}
@@ -27,7 +27,7 @@ export const Title: React.FC<Props> = ({ language }) => {
             </motion.h4>
           </motion.div>
           <motion.div
-            initial={{ x: "100vw" }}
+            initial={{ x: 1000 }}
             animate={{ x: 0 }}
             transition={{ delay: 1, duration: 2 }}
           >
@@ -38,7 +38,7 @@ export const Title: React.FC<Props> = ({ language }) => {
             </motion.h4>
           </motion.div>
           <motion.div
-            initial={{ y: "100vh" }}
+            initial={{ y: 1000 }}
             animate={{ y: 0 }}
             transition={{ delay: 1.5, duration: 2 }}
           >

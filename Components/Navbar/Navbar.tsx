@@ -12,6 +12,7 @@ export const NavBar: React.FC<Props> = ({ language }) => {
     <Container
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: 0.3 }}
+      exit={{ opacity: 0 }}
     >
       <p>
         <Link to="home" spy={true} smooth={true}>

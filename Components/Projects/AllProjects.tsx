@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Projects } from "./AllProjects.styled";
 import { projects } from "../../Assets/projects";
 import { Button } from "../Components/Button";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {
   language: string;
@@ -17,11 +18,12 @@ export const AllProjects: React.FC<Props> = ({ language }) => {
   const Hidden = () => {
     return (
       <Container>
-        <h4 onClick={toggle}>
-          {language === "es"
-            ? "Mostrar Todos Los Proyectos"
-            : "Show All Projects"}
-        </h4>
+        <div onClick={toggle}>
+          <Button
+            color="#85144b"
+            text={language === "es" ? "Mostrar Todo" : "Show All"}
+          />
+        </div>
       </Container>
     );
   };
@@ -29,7 +31,12 @@ export const AllProjects: React.FC<Props> = ({ language }) => {
   const Visible = () => {
     return (
       <Container>
-        <h4 onClick={toggle}>{language === "es" ? "Ocultar" : "Show less"}</h4>
+        <div onClick={toggle}>
+          <Button
+            color="#85144b"
+            text={language === "es" ? "Ocultar" : "Show less"}
+          />
+        </div>
         <Projects>
           {projects.slice(2).map((project, index) => {
             return (
@@ -45,5 +52,15 @@ export const AllProjects: React.FC<Props> = ({ language }) => {
     );
   };
 
-  return <div>{showProjects ? <Visible /> : <Hidden />}</div>;
+  return (
+    <div>
+      {showProjects ? (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <Visible />
+        </motion.div>
+      ) : (
+        <Hidden />
+      )}
+    </div>
+  );
 };
