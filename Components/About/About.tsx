@@ -1,6 +1,6 @@
-import { Container, Stack } from "./About.styled";
 import { es, en } from "../../Localization/language";
 import { slides } from "../../Assets/slides";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 
 type Props = {
   language: string;
@@ -12,48 +12,58 @@ const onClick = (url: string) => {
 
 const Icons = () => {
   return (
-    <div>
+    <Stack direction={"row"} justifyContent={"space-evenly"} wrap={"wrap"}>
       {slides.map((slide, index) => {
         return (
-          <div key={index}>
-            <i onClick={() => onClick(slide.url)} className={slide.icon}></i>
-          </div>
+          <Box key={index} py={1}>
+            <Text
+              fontSize={[50, 65]}
+              onClick={() => onClick(slide.url)}
+              className={slide.icon}
+            ></Text>
+          </Box>
         );
       })}
-    </div>
+    </Stack>
   );
 };
 
 const Es = () => {
   return (
-    <div>
-      <h2>Acerca De Mi</h2>
-      <q>{es.quote}</q>
-      <p>{es.about}</p>
-      <Stack>
-        <h4>Tecnologías</h4>
-        <Icons />
-      </Stack>
-    </div>
+    <Box textAlign={"center"}>
+      <Heading fontSize={[50, 80]} py={10}>
+        Acerca De Mi
+      </Heading>
+      <Text pb={5}>{es.quote}</Text>
+      <Text pb={5}>{es.about}</Text>
+      <Heading fontSize={[50, 80]} pb={5}>
+        Tecnologías
+      </Heading>
+      <Icons />
+    </Box>
   );
 };
 
 const En = () => {
   return (
-    <div>
-      <h2>About Me</h2>
-      <q>{en.quote}</q>
-      <p>{en.about}</p>
-      <Stack>
-        <h4>Technologies</h4>
-        <Icons />
-      </Stack>
-    </div>
+    <Box textAlign={"center"}>
+      <Heading fontSize={[50, 80]} py={10}>
+        About Me
+      </Heading>
+      <Text pb={5}>{en.quote}</Text>
+      <Text pb={5}>{en.about}</Text>
+      <Heading fontSize={[50, 80]} pb={5}>
+        Technologies
+      </Heading>
+      <Icons />
+    </Box>
   );
 };
 
 export const About: React.FC<Props> = ({ language }) => {
   return (
-    <Container id="about">{language === "es" ? <Es /> : <En />}</Container>
+    <Box pt={15} id="about">
+      {language === "es" ? <Es /> : <En />}
+    </Box>
   );
 };

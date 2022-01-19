@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const Wrapper = styled(motion.div)`
   border-radius: 30px;
-  height: 20px;
+  height: 10px;
   width: 100px;
   right: 5%;
   position: absolute;
@@ -13,12 +13,15 @@ export const Wrapper = styled(motion.div)`
   justify-content: space-around;
   user-select: none;
   align-items: center;
+  p {
+    padding: 0;
+  }
 `;
 
 export const SelectorContainer = styled(motion.div)`
   background-color: #fff;
-  width: 34px;
-  height: 20px;
+  width: 25px;
+  height: 10px;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
@@ -26,8 +29,8 @@ export const SelectorContainer = styled(motion.div)`
 
 export const Selector = styled(motion.div)`
   background-color: #85144b;
-  height: 14px;
-  width: 14px;
+  height: 7px;
+  width: 7px;
   border-radius: 10px;
   top: 50%;
   left: ${(props: any) => props.position};
