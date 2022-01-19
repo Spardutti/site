@@ -17,7 +17,7 @@ const Icons = () => {
         return (
           <Box key={index} py={1}>
             <Text
-              fontSize={[50, 65]}
+              fontSize={[50, 50, 65]}
               onClick={() => onClick(slide.url)}
               className={slide.icon}
             ></Text>
@@ -31,12 +31,12 @@ const Icons = () => {
 const Es = () => {
   return (
     <Box textAlign={"center"}>
-      <Heading fontSize={[50, 80]} py={10}>
+      <Heading fontSize={[50, 60, 80]} py={10}>
         Acerca De Mi
       </Heading>
       <Text pb={5}>{es.quote}</Text>
       <Text pb={5}>{es.about}</Text>
-      <Heading fontSize={[50, 80]} pb={5}>
+      <Heading fontSize={[50, 60, 80]} pb={5}>
         Tecnologías
       </Heading>
       <Icons />

@@ -23,7 +23,7 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
   const Es = () => {
     return (
       <Box py={10} textAlign={"center"}>
-        <Heading fontSize={[50, 80]}>Contactame</Heading>
+        <Heading fontSize={[50, 60, 80]}>Contactame</Heading>
         <Stack pt={10} justifyContent={"center"} direction={"row"}>
           {contactInfo.map((elem, index) => {
             return (
@@ -50,7 +50,7 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
   const En = () => {
     return (
       <Box py={10} textAlign={"center"}>
-        <Heading fontSize={[50, 80]}>Contact Me</Heading>
+        <Heading fontSize={[50, 60, 80]}>Contact Me</Heading>
         <Stack pt={10} justifyContent={"center"} direction={"row"}>
           {contactInfo.map((elem, index) => {
             return (

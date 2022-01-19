@@ -80,6 +80,7 @@ export const ProjectsContainer: React.FC<Props> = ({ language, yPos }) => {
       <Stack
         direction={["column", "row"]}
         justifyContent={"center"}
+        alignItems={["center", null]}
         spacing={10}
       >
         {projects.slice(0, 2).map((project, index) => {

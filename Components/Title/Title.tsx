@@ -20,8 +20,8 @@ export const Title: React.FC<Props> = ({ language }) => {
         justifyContent={["center"]}
         alignItems={"center"}
       >
-        <Heading fontSize={[80, 130]}>FullStack</Heading>
-        <Heading fontSize={[70, 130]}>Developer</Heading>
+        <Heading fontSize={[80, 90, 130]}>FullStack</Heading>
+        <Heading fontSize={[70, 90, 130]}>Developer</Heading>
       </Stack>
       <VStack textAlign={"center"} justifyContent={["center"]}>
         <motion.div
@@ -31,7 +31,7 @@ export const Title: React.FC<Props> = ({ language }) => {
           whileTap={{ scale: 1.2 }}
         >
           <Link to="projects" style={{ cursor: "pointer" }}>
-            <MotionText fontSize={50} whileHover={{ scale: 1.2 }}>
+            <MotionText fontSize={[35, 45, 50]} whileHover={{ scale: 1.2 }}>
               {language === "es" ? "Proyectos" : "Projects"}
             </MotionText>
           </Link>
@@ -43,7 +43,7 @@ export const Title: React.FC<Props> = ({ language }) => {
           whileTap={{ scale: 1.2 }}
         >
           <Link to="about" style={{ cursor: "pointer" }}>
-            <MotionText fontSize={50} whileHover={{ scale: 1.2 }}>
+            <MotionText fontSize={[35, 45, 50]} whileHover={{ scale: 1.2 }}>
               {language === "es" ? "Acerca De" : "About Me"}
             </MotionText>
           </Link>
@@ -55,7 +55,7 @@ export const Title: React.FC<Props> = ({ language }) => {
           whileTap={{ scale: 1.2 }}
         >
           <Link to="contact" style={{ cursor: "pointer" }}>
-            <MotionText fontSize={50} whileHover={{ scale: 1.2 }}>
+            <MotionText fontSize={[35, 45, 50]} whileHover={{ scale: 1.2 }}>
               {language === "es" ? "Contacto" : "Contact"}
             </MotionText>
           </Link>
