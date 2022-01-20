@@ -3,6 +3,7 @@ import { ProjectsContainer } from "../Projects/ProjectsContainer";
 import { useEffect, useState } from "react";
 import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
+import { Box } from "@chakra-ui/react";
 
 interface Props {
   language: string;
@@ -20,11 +21,11 @@ export const Home: React.FC<Props> = ({ language }) => {
   }, []);
 
   return (
-    <div>
+    <Box bg={"blackAlpha.900"} color="whiteAlpha.900">
       <Title language={language} />
       <ProjectsContainer language={language} yPos={yPos} />
       <About language={language} />
       <Contact language={language} />
-    </div>
+    </Box>
   );
 };

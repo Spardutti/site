@@ -17,17 +17,11 @@ export const LangButton: React.FC = () => {
   };
 
   useEffect(() => {
-    language === "es" ? setIsToggled("2px") : setIsToggled("18px");
+    language === "es" ? setIsToggled("2px") : setIsToggled("16px");
   }, [language]);
 
   return (
-    <Wrapper
-      initial={{
-        opacity: 0,
-      }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 1.5 }}
-    >
+    <Wrapper>
       <p>Es</p>
       <SelectorContainer onClick={switchLanguage}>
         <Selector position={isToggled} />

@@ -25,7 +25,7 @@ export const es: Info = {
   title: "Desarrollador Fullstack",
   home: "Inicio",
   projects: "Proyectos",
-  about: `Impulsado por la curiosidad, siempre estoy ansioso por aprender cosas nuevas. Enfocado 
+  about: `Impulsado por la curiosidad, siempre estoy motivado por aprender cosas nuevas. Enfocado 
     en convertirme en una mejor versión de mí mismo cada día.`,
   contact: "Contactame",
   quote:

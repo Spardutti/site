@@ -1,5 +1,4 @@
-import { Box, Center, Heading, Link, Stack, Text } from "@chakra-ui/react";
-import { Container } from "./Contact.styled";
+import { Box, Heading, Link, Stack, Text } from "@chakra-ui/react";
 import { ImWhatsapp } from "react-icons/im";
 import { SiGmail } from "react-icons/si";
 
@@ -39,7 +38,11 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
           >
             <SiGmail fontSize={60} />
           </Link>
-          <Link href="https://wa.me/+5491138629691" target="_blank">
+          <Link
+            textColor={"whatsapp.600"}
+            href="https://wa.me/+5491138629691"
+            target="_blank"
+          >
             <ImWhatsapp fontSize={60} />
           </Link>
         </Stack>
@@ -55,7 +58,11 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
           {contactInfo.map((elem, index) => {
             return (
               <Link href={elem.url} key={index} target={"_blank"}>
-                <Text fontSize={40} px={[1, 10]} className={elem.icon}></Text>
+                <Text
+                  fontSize={[40, 40, 60]}
+                  px={[1, 10]}
+                  className={elem.icon}
+                ></Text>
               </Link>
             );
           })}
@@ -63,11 +70,18 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
             px={[1, 10]}
             href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"
             target="_blank"
+            textColor={"red.700"}
+            fontSize={[40, 40, 60]}
           >
-            <SiGmail fontSize={40} />
+            <SiGmail />
           </Link>
-          <Link href="https://wa.me/+5491138629691" target="_blank">
-            <ImWhatsapp fontSize={40} />
+          <Link
+            textColor={"whatsapp.600"}
+            href="https://wa.me/+5491138629691"
+            target="_blank"
+            fontSize={[40, 40, 60]}
+          >
+            <ImWhatsapp />
           </Link>
         </Stack>
       </Box>

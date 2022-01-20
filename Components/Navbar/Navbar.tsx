@@ -1,8 +1,7 @@
-import { Container, Stack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { LangButton } from "../LangButton/LangButton";
 import { Link } from "react-scroll";
 import { es, en } from "../../Localization/language";
-import { Box } from "@chakra-ui/react";
 
 type Props = {
   language: string;
@@ -21,26 +20,26 @@ export const NavBar: React.FC<Props> = ({ language }) => {
       color={"white"}
       zIndex={100}
     >
-      <p>
+      <Box cursor={"pointer"}>
         <Link to="home" spy={true} smooth={true}>
           {language === "es" ? es.home : en.home}
         </Link>
-      </p>
-      <p>
+      </Box>
+      <Box cursor={"pointer"}>
         <Link to="projects" spy={true} smooth={true}>
           {language === "es" ? es.projects : en.projects}
         </Link>
-      </p>
-      <p>
+      </Box>
+      <Box cursor={"pointer"}>
         <Link to="about" spy={true} smooth={true}>
           {language === "es" ? "Acerca De" : "About Me"}
         </Link>
-      </p>
-      <p>
+      </Box>
+      <Box cursor={"pointer"}>
         <Link to="contact" spy={true} smooth={true}>
           {language === "es" ? es.contact : en.contact}
         </Link>
-      </p>
+      </Box>
       <LangButton />
     </Stack>
   );
