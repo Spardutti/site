@@ -115,7 +115,9 @@ export const ProjectsContainer: React.FC<Props> = ({ language, yPos }) => {
                   justifyContent={"space-evenly"}
                 >
                   <Link href={demo} target={"_blank"}>
-                    <Button colorScheme={"orange"}>Demo</Button>
+                    <Button colorScheme={"orange"}>
+                      {language === "es" ? "Ver" : "Demo"}
+                    </Button>
                   </Link>
                   <Link href={github} target={"_blank"}>
                     <Button colorScheme={"teal"} leftIcon={<GitHub />}>

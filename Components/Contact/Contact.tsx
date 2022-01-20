@@ -33,8 +33,9 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
           })}
           <Link
             pr={[1, 10]}
-            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"
+            href={"mailto:luisdamian.sp@gmail.com?Subject=Hola " + "Damian"}
             target="_blank"
+            textColor={"red.700"}
           >
             <SiGmail fontSize={60} />
           </Link>
@@ -68,7 +69,7 @@ export const Contact: React.FC<{ language: string }> = ({ language }) => {
           })}
           <Link
             px={[1, 10]}
-            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"
+            href={"mailto:luisdamian.sp@gmail.com?Subject=Hello " + "Damian"}
             target="_blank"
             textColor={"red.700"}
             fontSize={[40, 40, 60]}

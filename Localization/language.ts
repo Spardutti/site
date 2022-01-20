@@ -12,7 +12,7 @@ export const en: Info = {
   home: "Home",
   projects: "Projects",
   quote: `What I do is not just for me. 
-  It's for people like you, who are looking to get things done`,
+  It's for people like you, who are looking to get things done.`,
   about: `A full stack developer with a thirst for learning. I have experience with different frameworks,
  and technologies. I'm always looking to learn new technologies so if you have any questions about what 
  I do or how to improve please

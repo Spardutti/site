@@ -1,6 +1,7 @@
 import { es, en } from "../../Localization/language";
 import { slides } from "../../Assets/slides";
 import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 type Props = {
   language: string;
@@ -10,26 +11,30 @@ const onClick = (url: string) => {
   window.open(url, "_blank");
 };
 
+const MotionBox = motion(Box);
+
 const Icons = () => {
   return (
     <Flex flexWrap={"wrap"} m={2} p={2} justifyContent={"center"}>
       {slides.map((slide, index) => {
         return (
-          <Box
+          <MotionBox
             mx={"auto"}
             key={index}
             p={2}
             bg={"whiteAlpha.900"}
             borderRadius={20}
             w={20}
-            m={1}
+            m={2}
+            cursor={"pointer"}
+            whileHover={{ scale: 1.2 }}
           >
             <Text
               fontSize={[50, 50, 65]}
               onClick={() => onClick(slide.url)}
               className={slide.icon}
             ></Text>
-          </Box>
+          </MotionBox>
         );
       })}
     </Flex>
