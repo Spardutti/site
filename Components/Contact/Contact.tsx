@@ -1,5 +1,7 @@
+import { Box, Center, Heading, Link, Stack, Text } from "@chakra-ui/react";
 import { Container } from "./Contact.styled";
-import Image from "next/image";
+import { ImWhatsapp } from "react-icons/im";
+import { SiGmail } from "react-icons/si";
 
 type Info = {
   url: string;
@@ -20,72 +22,55 @@ const contactInfo: Info = [
 export const Contact: React.FC<{ language: string }> = ({ language }) => {
   const Es = () => {
     return (
-      <Container>
-        <h2>Contactame</h2>
-        <div>
+      <Box py={10} textAlign={"center"}>
+        <Heading fontSize={[50, 60, 80]}>Contactame</Heading>
+        <Stack pt={10} justifyContent={"center"} direction={"row"}>
           {contactInfo.map((elem, index) => {
             return (
-              <a href={elem.url} key={index} target={"_blank"} rel="noreferrer">
-                <i className={elem.icon}></i>
-              </a>
+              <Link href={elem.url} key={index} target={"_blank"}>
+                <Text fontSize={60} px={[1, 10]} className={elem.icon}></Text>
+              </Link>
             );
           })}
-          <a
+          <Link
+            pr={[1, 10]}
             href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"
             target="_blank"
-            rel="noreferrer"
           >
-            <img
-              src="https://img.icons8.com/color/48/000000/gmail-new.png"
-              alt="gmail"
-            />
-          </a>
-          <a
-            href="https://wa.me/+5491138629691"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="https://img.icons8.com/color/48/000000/whatsapp--v3.png"
-              alt="whatsapp"
-            />
-          </a>
-        </div>
-      </Container>
+            <SiGmail fontSize={60} />
+          </Link>
+          <Link href="https://wa.me/+5491138629691" target="_blank">
+            <ImWhatsapp fontSize={60} />
+          </Link>
+        </Stack>
+      </Box>
     );
   };
 
   const En = () => {
     return (
-      <Container>
-        <h2>Contact Me</h2>
-        <div>
+      <Box py={10} textAlign={"center"}>
+        <Heading fontSize={[50, 60, 80]}>Contact Me</Heading>
+        <Stack pt={10} justifyContent={"center"} direction={"row"}>
           {contactInfo.map((elem, index) => {
-            return <i key={index} className={elem.icon}></i>;
+            return (
+              <Link href={elem.url} key={index} target={"_blank"}>
+                <Text fontSize={40} px={[1, 10]} className={elem.icon}></Text>
+              </Link>
+            );
           })}
-          <a
-            //href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"
+          <Link
+            px={[1, 10]}
+            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=luisdamian.sp@gmail.com"
             target="_blank"
-            rel="noreferrer"
-            href="mailto:luisdamian.sp@gmail.com?Subject=Hello%20Damian"
           >
-            <img
-              src="https://img.icons8.com/color/48/000000/gmail-new.png"
-              alt="gmail"
-            />
-          </a>
-          <a
-            href="https://wa.me/+5491138629691"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="https://img.icons8.com/color/48/000000/whatsapp--v3.png"
-              alt="whatsapp"
-            />
-          </a>
-        </div>
-      </Container>
+            <SiGmail fontSize={40} />
+          </Link>
+          <Link href="https://wa.me/+5491138629691" target="_blank">
+            <ImWhatsapp fontSize={40} />
+          </Link>
+        </Stack>
+      </Box>
     );
   };
 
